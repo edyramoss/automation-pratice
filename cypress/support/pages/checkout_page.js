@@ -59,11 +59,11 @@ export function clicaSave() {
 }
 
 export function confirmaDados() {
-    cy.get(':nth-child(2) > h3').should('be.visible').and('have.text', 'Billings Information registred with success!')
+    cy.get('#checkout_one').should('contain', 'Billings Information registred with success!')
 }
 
 export function confirmaErroDados() {
-    cy.get(':nth-child(2) > h3').should('not.be.visible')
+    cy.get('#checkout_one').should('not.contain', 'Billings Information registred with success!')
 }
 
 export function selecionaPagamento() {
@@ -96,4 +96,24 @@ export function erroCmpany() {
 
 export function erroEmail() {
     cy.get('#errorMessageFirstName').should('be.visible').and('have.text', 'O campo E-mail deve ser prenchido ou é inválido')
+}
+
+export function erroPais() {
+    cy.get('#errorMessageFirstName').should('be.visible').and('have.text', 'O campo Country deve ser prenchido')
+}
+
+export function erroCidade() {
+    cy.get('#errorMessageFirstName').should('be.visible').and('have.text', 'O campo City deve ser prenchido')
+}
+
+export function erroCep() {
+    cy.get('#errorMessageFirstName').should('be.visible').and('have.text', 'O campo Zip Code deve ser prenchido')
+}
+
+export function erroEndereco() {
+    cy.get('#errorMessageFirstName').should('be.visible').and('have.text', 'O campo Address deve ser prenchido')
+}
+
+export function erroObservacoes() {
+    cy.get('#errorMessageFirstName').should('be.visible').and('have.text', 'O campo Additional Notes deve ser prenchido')
 }
